@@ -5,6 +5,12 @@
 #ifndef GALOIS_MULTIPRIORITYQUEUE_H
 #define GALOIS_MULTIPRIORITYQUEUE_H
 
+#include <vector>
+#include <mutex>
+#include <random>
+
+using namespace std;
+
 template <typename T, typename Cmp = std::less<T>, const size_t size = 40>
 class MultiPriorityQueue : private boost::noncopyable {
     struct Heap {
