@@ -8,13 +8,15 @@
 #include <vector>
 #include <mutex>
 #include <random>
+#include <boost/noncopyable.hpp>
+#include "WLCompileCheck.h"
 
 using namespace std;
 
 namespace galois {
 namespace worklists {
 
-template <typename T, typename Cmp = std::less<T>, const size_t size = 40>
+template <typename T = int, typename Cmp = std::less<T>, const size_t size = 40>
 struct MultiPriorityQueue : private boost::noncopyable {
     struct Heap {
         std::mutex lock;
