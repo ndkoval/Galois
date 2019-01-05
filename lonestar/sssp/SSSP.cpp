@@ -17,6 +17,7 @@
  * Documentation, or loss or inaccuracy of data of any kind.
  */
 
+#include "galois/worklists/MultiPriorityQueue.h"
 #include "galois/Galois.h"
 #include "galois/AtomicHelpers.h"
 #include "galois/Reduction.h"
