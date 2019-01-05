@@ -11,8 +11,11 @@
 
 using namespace std;
 
+namespace galois {
+namespace worklists {
+
 template <typename T, typename Cmp = std::less<T>, const size_t size = 40>
-class MultiPriorityQueue : private boost::noncopyable {
+struct MultiPriorityQueue : private boost::noncopyable {
     struct Heap {
         std::mutex lock;
         std::vector<T> data;
@@ -100,5 +103,8 @@ private:
     }
 };
 GALOIS_WLCOMPILECHECK(MultiPriorityQueue)
+
+} // end namespace worklists
+} // end namespace galois
 
 #endif //GALOIS_MULTIPRIORITYQUEUE_H
